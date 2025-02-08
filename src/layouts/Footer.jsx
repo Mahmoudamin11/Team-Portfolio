@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import LazyImage from "../utils/LazyImage";
 import { OurContacts } from "@/data/OurContacts";
 import { ourServices } from "@/data/ourServices";
+import { Img } from "react-image";
 
 
 function Footer() {
@@ -30,10 +31,10 @@ function Footer() {
   return (
     <div className="footer bg-main-color py-8  sm:py-11">
       <div className="containerD flex justify-between flex-wrap  max-sm:gap-8 max-sm:flex-col max-sm:items-center  sm:gap-10  lg:gap-8   ">
-        <LazyImage
+        <Img
           src="/assets/.codeLogo/logoB.webp"
-          parent={`h-[180px] w-[180px] rounded-md`}
-          className="w-full h-full my-auto"
+          loader={<div  className={`h-[180px] w-[180px] rounded-md bg-[#e8f4fd] animate-pulse`} />}
+          className="h-[180px] w-[180px] my-auto"
           alt=""
         />
 

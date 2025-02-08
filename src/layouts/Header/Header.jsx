@@ -20,11 +20,12 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center  ">
           <Link to="/">
-            <LazyImage
+            <Img
               src="/assets/.codeLogo/logo.webp"
               alt="DotCode"
-              parent={`w-14 h-14`}
-              className={`w-full h-full ${selectedLanguage === "ar" ? "ml-6" : ""}`}
+              // parent={`w-14 h-14`}
+              loader={<div className={'w-14 h-14 rounded-md bg-[#e8f4fd] animate-pulse'} />}
+              className={`w-14 h-14 ${selectedLanguage === "ar" ? "ml-6" : ""}`}
               // loader={<LoadingSpinner />}
             />
           </Link>

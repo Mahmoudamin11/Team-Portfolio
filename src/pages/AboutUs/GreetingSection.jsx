@@ -22,7 +22,8 @@ const GreetingSection = () => {
                 <LazyImage
                     src="/assets/aboutUs/aboutUs-img2.webp"
                     alt="About Us"
-                    parent={`h-[350px] w-full rounded-lg`}
+                    parent={`w-full h-full rounded-lg`}
+                    loader={`w-[325px] h-[220px] sm:w-[400px] sm:h-[280px] md:w-[600px] mx-auto mx-w-full md:h-[350px] rounded-lg`}
                     className={`w-full h-full rounded-lg trans`}
                 />
             </div>

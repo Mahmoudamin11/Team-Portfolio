@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import { Img } from "react-image";
 
-const LazyImage = memo(({ src, alt, className,parent}) => {
+const LazyImage = memo(({ src, alt, className,parent, loader}) => {
   const imageRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(null); // Holds image source
 
@@ -30,7 +30,7 @@ const LazyImage = memo(({ src, alt, className,parent}) => {
   }, [src]);
 
   return (
-    <div ref={imageRef} className={`${parent}`}>
+    <div ref={imageRef} className={`${parent} overflow-hidden`}>
       {imageSrc ? (
         <Img
           src={imageSrc}
@@ -38,11 +38,11 @@ const LazyImage = memo(({ src, alt, className,parent}) => {
           loading="lazy"
           width={"100%"}
           height={"100%"}
-          loader={<div className={`${parent} bg-[#e8f4fd] animate-pulse`} />}
-          className={className}
+          loader={<div className={`${loader ? loader : parent} bg-[#e8f4fd] animate-pulse`} />}
+          className={`${className} overflow-hidden`}
         />
       ) : (
-        <div  className={`${parent} bg-[#e8f4fd] animate-pulse`} />
+        <div  className={`${loader ? loader : parent} bg-[#e8f4fd] animate-pulse`} />
       )}
     </div>
   );

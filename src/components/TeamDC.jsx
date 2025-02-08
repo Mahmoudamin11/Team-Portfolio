@@ -22,11 +22,12 @@ const TeamDC = () => {
               key={index}
               className="group h-[420px] relative bg-color-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-all duration-300"
             >
-              <LazyImage
+              <Img
                 src={member.imageUrl}
                 alt={member.name}
                 style={{ transition: "all 200ms ease-in-out" }}
-                parent={`w-full h-[419px] rounded-lg`}
+                // parent={`w-full h-[419px] rounded-lg`}
+                loader={<div  className={`w-full h-[419px] rounded-lg bg-[#e8f4fd] animate-pulse`} />}
                 className="w-full h-full trans object-cover  group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-45 transition-opacity duration-300"></div>
